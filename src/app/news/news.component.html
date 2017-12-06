@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <div class="card mb-3">
+        <div class="card-header">
+          <div class="float-left">Top headlines</div>
+          <div class="float-right">
+            <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search by title" />
+          </div>
+        </div>
+        <div *ngIf="loading" style="margin:0 auto; text-align:center;">
+          <div style="padding: 10px; font-size: 60px;">
+            <i class="fa fa-spinner fa-6" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="list-group list-group-flush small" *ngIf="mainData; else noLatestNews">
+          <a class="list-group-item list-group-item-action" *ngFor="let news of mainData | newsFilter: searchText" href={{news.url}}
+            target="_blank">
+            <div class="media">
+              <img class="d-flex mr-3 rounded-circle" src={{news.urlToImage}} width="50" height="50" alt="">
+              <div class="media-body">
+                {{news.description}}
+                <p class="smaller">{{news.publishedAt | date: 'shortDate'}} {{news.publishedAt | date: 'shortTime'}}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <ng-template #noLatestNews>No Latest News</ng-template>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <div class="card mb-3">
+        <div class="card-header">
+          <div class="float-left">Everything</div>
+          <div class="float-right">
+            <input type="text" class="form-control" [(ngModel)]="searchTerm" placeholder="Search by title" />
+          </div>
+        </div>
+        <div class="list-group list-group-flush small">
+          <a class="list-group-item list-group-item-action" *ngFor="let item of allNews | async | slice:0:12 | filter: searchTerm"
+            href="{{item.url}}" target="_blank">
+            <div class="media">
+              <img class="d-flex mr-3 rounded-circle" src={{item.urlToImage}} width="50" height="50" alt="">
+              <div class="media-body">
+                {{item.title}}
+                <p class="smaller">{{item.publishedAt | date: 'longDate'}} {{item.publishedAt | date: 'shortTime'}}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <h3>ng2-smart-table</h3>
+  </div>
+  <div class="col-md-6 col-sm-12">
+    <p>Also click here for: <a [routerLink]="['/ngxdatatable']">ngx Datatable</a></p>
+  </div>
+</div>
+
+<br/>
+<p>
+  <a href='https://akveo.github.io/ng2-smart-table/#/'>ng2-smart-table</a> Smart data table library with sorting, filtering, pagination & add/edit/delete functions.</p>
+<br/>
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+    <ng2-smart-table [settings]="settings" class="table smart-table" add="false" [source]="data" (userRowSelect)="handleGridSelected($event)"></ng2-smart-table>
+  </div>
+</div>
+
+<br/>
+<!-- <div class="row">
+  <p>dsdss</p>
+  <ng2-ya-table [options]="options" [columns]="columns" [datasource]="(datasource | async)" [paging]="paging"></ng2-ya-table>
+</div> -->
+
+<div class="row adv-tbl-holder">
+  <div class="col-md-12 col-sm-12">
+    <h3>ngx-advanced-table</h3>
+    <p>Advanced table component for Angular(2+).</p>
+    <advanced-table [data]="mydata" [columns]="mycolumns" [sortInfo]="sortInfo"></advanced-table>
+  </div>
+</div>
+
+<br/>
+
+<!-- <div class="row adv-tbl-holder">
+  <div class="col-md-12 col-sm-12">
+    <ngx-datatable [rows]="rows" [columns]="columns">
+    </ngx-datatable>
+  </div>
+</div> -->

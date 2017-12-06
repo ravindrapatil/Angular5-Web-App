@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+    <h4>
+      <a href="https://angular-maps.com/api-docs/agm-core/index.html">AGM - Angular Google Maps</a>
+    </h4>
+    <p>Angular 2+ components for Google Maps. (Previously known as angular2-google-maps). New package name: @agm/core</p>
+    <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mapClicked($event)" [disableDefaultUI]=false [zoomControl]="false">
+      <agm-marker *ngFor="let m of markers; let i = index" 
+        (markerClick)="clickedMarker(m, i)" 
+        [latitude]="m.lat" [longitude]="m.lng"
+        [markerDraggable]="m.draggable" 
+        (dragEnd)="markerDragEnd(m, $event)">
+          <agm-info-window>
+            <strong>{{m.name}}</strong>
+          </agm-info-window>
+      </agm-marker>
+    </agm-map>
+  </div>
+</div>
+
+<p></p>
+<p></p>
+
+<div class="container">
+  <div class="row">
+    <p>
+      <strong>Add New Marker</strong>
+    </p>
+  </div>
+  <div class="row">
+    <form class="form-inline" (submit)="addMarker()">
+      <label class="sr-only" for="markerName">Location Name</label>
+      <input type="text" [(ngModel)]="markerName" name="markerName" id="markerName" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Location Name">
+
+      <label class="sr-only" for="latitude">Latitude</label>
+      <input type="text" [(ngModel)]="markerLat" name="markerLat" id="latitude" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Latitude">
+
+      <label class="sr-only" for="longitude">Longitude</label>
+      <input type="text" [(ngModel)]="markerLng" name="markerLng" id="longitude" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Longitude">
+
+      <label class="sr-only" for="draggable">Draggable</label>
+      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" [(ngModel)]="markerDraggable" name="markerDraggable" id="draggable">
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+      </select>
+
+      <button type="submit" class="btn btn-primary">Map It</button>
+    </form>
+  </div>
+</div>
+
+<br/><br/>
+<app-googlemap-autocomplete></app-googlemap-autocomplete>
+<br/><br/>
+
+<!-- <app-geofire-googlemaps></app-geofire-googlemaps>
+<br/><br/> -->

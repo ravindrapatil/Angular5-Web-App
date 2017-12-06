@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>ngx-datatable</h2>
+  <p>The table was designed to be extremely flexible and light; it doesn't make any assumptions about your data or how you: filter, sort or page it.</p>
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <ngx-datatable 
+      class="dark"
+      [columnMode]="'force'"
+      [rows]="rows"
+      [loadingIndicator]="loadingIndicator"
+      [columns]="columns"
+      [columnMode]="'force'"
+      [footerHeight]="100"
+      [headerHeight]="50"
+      [rowHeight]="'auto'"
+      [limit]="10"
+      [reorderable]="reorderable"
+      (select)="onSelect($event)">
+        <ngx-datatable-column name="id" name="ID"></ngx-datatable-column>
+        <ngx-datatable-column name="Name"></ngx-datatable-column>
+        <ngx-datatable-column prop="full_name" name="Full Name"></ngx-datatable-column>
+        <ngx-datatable-column prop="owner.login" name="Login"></ngx-datatable-column>
+      </ngx-datatable>
+    </div>
+  </div>
+</div>

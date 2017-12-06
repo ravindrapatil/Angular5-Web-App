@@ -1,0 +1,64 @@
+<h4>Angularfire (Firebase)</h4>
+<br/>
+<div class="container" *ngIf="items?.length > 0 ; else noItems">
+  <div *ngFor="let item of items" class="items row">
+    <div class="col-sm-12 col-md-12 items-content">
+      <div class="row">
+        <div class="col-sm-11 col-md-11">
+          {{item.title}} - {{item.description}}
+        </div>
+        <div class="col-sm-1 col-md-1">
+          <i *ngIf="editState && itemToEdit.id == item.id" (click)="clearState()" class="fa fa-window-close-o float-right" aria-hidden="true"></i>
+          <i (click)="editItem($event, item)" class="fa fa-pencil float-right" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-12" *ngIf="editState && itemToEdit.id == item.id">
+          <br/>
+          <form (ngSubmit)="updateItem(item)">
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <input type="text" class="form-control" placeholder="Title" [(ngModel)]="item.title" name="title">
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <input type="text" class="form-control" placeholder="Description" [(ngModel)]="item.description" name="description">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-12 text-center">
+                <br />
+                <button type="submit" class="btn btn-warning">Update Item</button>
+                <button class="btn btn-danger" (click)="deleteItem($event, item)">Delete</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noItems>
+  <hr />
+  <p>There are no items to list</p>
+</ng-template>
+
+<br/>
+<br/>
+
+<form (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <input type="text" class="form-control" placeholder="Title" [(ngModel)]="item.title" name="title">
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <input type="text" class="form-control" placeholder="Description" [(ngModel)]="item.description" name="description">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 text-center">
+      <br />
+      <button type="submit" class="btn btn-primary">Add new Item</button>
+    </div>
+  </div>
+</form>

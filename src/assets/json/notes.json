@@ -1,0 +1,60 @@
+{
+    "name": "Notes",
+    "formed": 2017,
+    "author": "Ravindra S Patil",
+    "active": true,
+    "members": [
+        {
+            "name": "New Project",
+            "description": "ng new PROJECT-NAME -> cd PROJECT-NAME -> ng serve"
+        },
+        {
+            "name": "Component",
+            "description": "ng g component my-new-component"
+        },
+        {
+            "name": "Directive",
+            "description": "ng g directive my-new-directive"
+        },
+        {
+            "name": "Pipe",
+            "description": "ng g pipe my-new-pipe"
+        },
+        {
+            "name": "Service",
+            "description": "ng g service my-new-service"
+        },
+        {
+            "name": "Class",
+            "description": "ng g class my-new-class"
+        },
+        {
+            "name": "Guard",
+            "description": "ng g guard my-new-guard"
+        },
+        {
+            "name": "Interface",
+            "description": "ng g interface my-new-interface"
+        },
+        {
+            "name": "Enum",
+            "description": "ng g enum my-new-enum"
+        },
+        {
+            "name": "Module",
+            "description": "ng g module my-module"
+        },
+        {
+            "name": "Example",
+            "description": "ng g s services/backendApi --module=app.module => This will create a new 'services' folder in the src/app folder and also add the service name in the providers section (providers: [BackendApiService]) of the app.module.ts file."
+        },
+        {
+            "name": "Reading local json files",
+            "description": "Following is the folder structure to read local json file: Angular 2 => root / src / data / file.json, Angular 4 => root / data / file.json"
+        },
+        {
+            "name": "Git commit",
+            "description": "git add * => git commit -m 'Add your comments' => git push => git status"
+        }
+    ]
+  }

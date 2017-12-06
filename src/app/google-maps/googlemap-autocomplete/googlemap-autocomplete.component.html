@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+    <h4>Google Maps Places Autocomplete</h4>
+    <p>* Browser asks for your location through a prompt. Click on 'Allow' to see your current location. Otherwise you will see the default location which is set by the developer.</p>
+    <p></p><p></p>
+    <div class="form-group">
+        <input placeholder="search for location" type="text" class="form-control" id='address'>
+    </div>
+    <agm-map 
+      [latitude]="latitude" 
+      [longitude]="longitude" 
+      [zoom]="zoom"
+      [scrollwheel]="false">
+        <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+    </agm-map>
+  </div>
+</div>
