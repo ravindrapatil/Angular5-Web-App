@@ -140,6 +140,15 @@ agm-map {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.tpl-driven-form .alert {
+    margin-top: 10px;
+    background-color: transparent;
+    border-color: transparent;
+    color: #a94442;
+    padding: 0;
+}
+
 .fa-pencil, .fa-window-close-o {
     margin: 3px 5px 0;
 }

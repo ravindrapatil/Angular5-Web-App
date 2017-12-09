@@ -43,6 +43,8 @@ import { GeofireGooglemapsComponent } from './google-maps/geofire-googlemaps/geo
 import { GeofireGooglemapsService } from './services/geofire-googlemaps.service';
 import { AfContainerComponent } from './angularfire2/af-container/af-container.component';
 import { FirestoreItemService } from './services/firestore-item.service';
+import { FormsComponent } from './forms/forms.component';
+import { ReactiveformsComponent } from './forms/reactiveforms/reactiveforms.component';
 
 export function highchartsModules() {
   return [ exporting, exporting2, exporting3 ];
@@ -66,7 +68,9 @@ export function highchartsModules() {
     GooglemapContainerComponent,
     GooglemapAutocompleteComponent,
     GeofireGooglemapsComponent,
-    AfContainerComponent
+    AfContainerComponent,
+    FormsComponent,
+    ReactiveformsComponent
   ],
   imports: [
     BrowserModule,
@@ -79,6 +83,7 @@ export function highchartsModules() {
     NgbCollapseModule.forRoot(),
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     Ng2SearchPipeModule,
     ChartModule,
     Ng2SmartTableModule,

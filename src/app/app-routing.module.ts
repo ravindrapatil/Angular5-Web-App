@@ -9,6 +9,7 @@ import { BasicTableComponent } from './tables/basic-table/basic-table.component'
 import { NgxDatatableComponent } from './tables/ngx-datatable/ngx-datatable.component';
 import { GooglemapContainerComponent } from './google-maps/googlemap-container/googlemap-container.component';
 import { AfContainerComponent } from './angularfire2/af-container/af-container.component';
+import { FormsComponent } from './forms/forms.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'tables', component: BasicTableComponent },
   { path: 'ngxdatatable', component: NgxDatatableComponent },
   { path: 'googlemaps', component: GooglemapContainerComponent },
-  { path: 'angularfire', component: AfContainerComponent }
+  { path: 'angularfire', component: AfContainerComponent },
+  { path: 'ngForm', component: FormsComponent}
 ];
 
 @NgModule({

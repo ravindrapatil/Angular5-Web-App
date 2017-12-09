@@ -34,13 +34,13 @@
         <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
           <a class="nav-link" [routerLink]="['/angularfire']">
             <i class="fa fa-fw fa-fire"></i>
-            <span class="nav-link-text">Angularfire (Firebase)</span>
+            <span class="nav-link-text">Firebase (Angularfire)</span>
           </a>
         </li>
-        <li class="nav-item" data-placement="right">
-          <a class="nav-link nav-link-collapse collapsed">
-            <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">Components</span>
+        <li class="nav-item" data-placement="right" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" [routerLink]="['/ngForm']">
+            <i class="fa fa-fw fa-file-text"></i>
+            <span class="nav-link-text">Forms</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Example Pages">

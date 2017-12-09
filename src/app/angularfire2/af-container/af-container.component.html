@@ -48,6 +48,11 @@
 
 <form (ngSubmit)="onSubmit()">
   <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <p><strong>Add new Item</strong></p>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-sm-12 col-md-6">
       <input type="text" class="form-control" placeholder="Title" [(ngModel)]="item.title" name="title">
     </div>
