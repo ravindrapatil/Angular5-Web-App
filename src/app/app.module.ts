@@ -45,6 +45,7 @@ import { AfContainerComponent } from './angularfire2/af-container/af-container.c
 import { FirestoreItemService } from './services/firestore-item.service';
 import { FormsComponent } from './forms/forms.component';
 import { ReactiveformsComponent } from './forms/reactiveforms/reactiveforms.component';
+import { FormValidateComponent } from './forms/form-validate/form-validate.component';
 
 export function highchartsModules() {
   return [ exporting, exporting2, exporting3 ];
@@ -70,7 +71,8 @@ export function highchartsModules() {
     GeofireGooglemapsComponent,
     AfContainerComponent,
     FormsComponent,
-    ReactiveformsComponent
+    ReactiveformsComponent,
+    FormValidateComponent
   ],
   imports: [
     BrowserModule,

@@ -25,9 +25,11 @@ export class ReactiveformsComponent implements OnInit {
       })
     });
 
-    this.reactiveForm.valueChanges.filter(data => this.reactiveForm.valid).subscribe(data => {
-      console.log(JSON.stringify(data));
-      this.formData = data;
+    this.reactiveForm.valueChanges
+      .filter(data => this.reactiveForm.valid)
+      .subscribe(data => {
+        console.log(JSON.stringify(data));
+        this.formData = data;
     });
   }
 
