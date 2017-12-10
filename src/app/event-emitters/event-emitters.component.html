@@ -1,0 +1,26 @@
+<!-- <app-event-emitters-child (clicked)="onClicked($event)"></app-event-emitters-child> -->
+<div class="row">
+  <div class="col-sm-12 col-md-6">
+    <h4 class="text-primary">Parent Component</h4>
+    <br/>
+    <p>Enter the Text to send to the Child Component :</p>
+    <input type="text" placeholder="Enter" class="form-control" #parentInput (keyup)="0" />
+    <br/>
+    <p>Value passed by Child component: <span class="text-danger"><strong>{{childValue}}</strong></span></p>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <app-event-emitters-child 
+      [valuepassed]="{one: parentInput.value, two: 'Enter Value to be passed to Parent Component'}" 
+      (toParent)="childValue = $event">
+    </app-event-emitters-child>
+  </div>
+</div>
+<br/>
+<hr/>
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+      <app-pass-data-to-child 
+        [employeeInfo] = "employeeRecord"
+        (sendRecord)="getRecord($event)"></app-pass-data-to-child>
+    </div>
+</div>

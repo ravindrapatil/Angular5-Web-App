@@ -1,0 +1,9 @@
+<h4 class="text-primary">Child Component</h4>
+<br/>
+<p>The value Passed by Parent Component is : <span class="text-primary"><strong>{{valuepassed.one}}</strong></span></p>
+<p>{{valuepassed.two}} :</p>
+<br />
+<input type="text" placeholder="Enter" class="form-control" #childInput (keyup)="onChange(childInput.value)" />
+<!-- <div>
+  <button (click)="clickChild()">Click Me!</button>
+</div> -->

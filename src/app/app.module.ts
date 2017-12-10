@@ -46,6 +46,9 @@ import { FirestoreItemService } from './services/firestore-item.service';
 import { FormsComponent } from './forms/forms.component';
 import { ReactiveformsComponent } from './forms/reactiveforms/reactiveforms.component';
 import { FormValidateComponent } from './forms/form-validate/form-validate.component';
+import { EventEmittersComponent } from './event-emitters/event-emitters.component';
+import { EventEmittersChildComponent } from './event-emitters/event-emitters-child.component';
+import { PassDataToChildComponent } from './event-emitters/pass-data-to-child/pass-data-to-child.component';
 
 export function highchartsModules() {
   return [ exporting, exporting2, exporting3 ];
@@ -72,7 +75,10 @@ export function highchartsModules() {
     AfContainerComponent,
     FormsComponent,
     ReactiveformsComponent,
-    FormValidateComponent
+    FormValidateComponent,
+    EventEmittersComponent,
+    EventEmittersChildComponent,
+    PassDataToChildComponent
   ],
   imports: [
     BrowserModule,

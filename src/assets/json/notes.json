@@ -55,6 +55,10 @@
         {
             "name": "Git commit",
             "description": "git add * => git commit -m 'Add your comments' => git push => git status"
+        },
+        {
+            "name": "http-server (on local)",
+            "description": "npm install http-server -g => http-server ./[yourfolder] -p 1337 =>  http://localhost:1337/myfile.html"
         }
     ]
   }
