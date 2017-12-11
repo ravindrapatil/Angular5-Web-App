@@ -49,10 +49,10 @@
             <span class="nav-link-text">Comp't Communication</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Menu Levels">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+        <li class="nav-item" data-placement="right" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" [routerLink]="['/primeNG']">
             <i class="fa fa-fw fa-sitemap"></i>
-            <span class="nav-link-text">Menu Levels</span>
+            <span class="nav-link-text">Prime NG</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Link">

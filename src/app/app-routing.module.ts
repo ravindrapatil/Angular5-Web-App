@@ -11,6 +11,11 @@ import { GooglemapContainerComponent } from './google-maps/googlemap-container/g
 import { AfContainerComponent } from './angularfire2/af-container/af-container.component';
 import { FormsComponent } from './forms/forms.component';
 import { EventEmittersComponent } from './event-emitters/event-emitters.component';
+import { AngularDataTableComponent } from './tables/angular-data-table/angular-data-table.component';
+import { PrimeNgComponent } from './prime-ng/prime-ng.component';
+import { DatatableComponent } from './prime-ng/datatable/datatable.component';
+import { PanelComponent } from './prime-ng/panel/panel.component';
+import { MessagesComponent } from './prime-ng/messages/messages.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -22,8 +27,13 @@ const routes: Routes = [
   { path: 'ngxdatatable', component: NgxDatatableComponent },
   { path: 'googlemaps', component: GooglemapContainerComponent },
   { path: 'angularfire', component: AfContainerComponent },
-  { path: 'ngForm', component: FormsComponent},
-  { path: 'eventemitters', component: EventEmittersComponent}
+  { path: 'ngForm', component: FormsComponent },
+  { path: 'eventemitters', component: EventEmittersComponent },
+  { path: 'angularDT', component: AngularDataTableComponent },
+  { path: 'primeNG', component: PrimeNgComponent },
+  { path: 'primeNGDataTable', component: DatatableComponent },
+  { path: 'primeNGpanel', component: PanelComponent },
+  { path: 'primeNGmsg', component: MessagesComponent }
 ];
 
 @NgModule({

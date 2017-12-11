@@ -21,6 +21,23 @@
     <div class="col-sm-12 col-md-12">
       <app-pass-data-to-child 
         [employeeInfo] = "employeeRecord"
-        (sendRecord)="getRecord($event)"></app-pass-data-to-child>
+        (sendRecord)="getRecord($event, content)"></app-pass-data-to-child>
     </div>
 </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Employee Details</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p><strong>Name:</strong> {{employeeInfo.eName}}</p>
+    <p><strong>City:</strong> {{employeeInfo.eCity}}</p>
+    <p><strong>Department:</strong> {{employeeInfo.eDept}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>

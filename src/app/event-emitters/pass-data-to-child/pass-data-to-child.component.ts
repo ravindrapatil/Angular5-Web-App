@@ -16,6 +16,10 @@ export class PassDataToChildComponent implements OnInit {
     this.sendRecord.emit(emp);
   }
 
+  next() {
+    alert('next');
+  }
+
   ngOnInit() {
   }
 

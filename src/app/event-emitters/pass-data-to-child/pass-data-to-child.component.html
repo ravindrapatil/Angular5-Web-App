@@ -1,28 +1,26 @@
-<!-- <ul class="list-group">
-  <li *ngFor="let emp of employeeInfo" class="list-group-item">{{emp.eName}}</li>
-</ul> -->
+
 <br />
 <h4 class="text-primary">Parent to Child data communication</h4>
 <br />
 <table class="table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>City</th>
-        <th>Deptartment</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let emp of employeeInfo; let i = index">
-        <td>{{i+1}}</td>
-        <td>{{emp.eName}}</td>
-        <td>{{emp.eCity}}</td>
-        <td>{{emp.eDept}}</td>
-        <td><button class="btn btn-primary" (click)="emitSendRecord(emp)">Select</button></td>
-      </tr>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Deptartment</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employeeInfo; let i = index">
+      <td>{{i+1}}</td>
+      <td>{{emp.eName}}</td>
+      <td>{{emp.eCity}}</td>
+      <td>{{emp.eDept}}</td>
+      <td>
+        <button class="btn btn-primary" (click)="emitSendRecord(emp)">Select</button>
+      </td>
+    </tr>
   </tbody>
 </table>
-
-

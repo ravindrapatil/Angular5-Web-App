@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
@@ -19,9 +20,12 @@ import { AgmCoreModule } from '@agm/core';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+// PrimeNG
+import { DataTableModule, SharedModule, DropdownModule, AccordionModule,
+  PanelModule, TabViewModule, FieldsetModule, GrowlModule } from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChartsComponent } from './charts/charts.component';
@@ -49,6 +53,12 @@ import { FormValidateComponent } from './forms/form-validate/form-validate.compo
 import { EventEmittersComponent } from './event-emitters/event-emitters.component';
 import { EventEmittersChildComponent } from './event-emitters/event-emitters-child.component';
 import { PassDataToChildComponent } from './event-emitters/pass-data-to-child/pass-data-to-child.component';
+import { AngularDataTableComponent } from './tables/angular-data-table/angular-data-table.component';
+import { PrimeNgComponent } from './prime-ng/prime-ng.component';
+import { DatatableComponent } from './prime-ng/datatable/datatable.component';
+import { CarsService } from './services/cars.service';
+import { PanelComponent } from './prime-ng/panel/panel.component';
+import { MessagesComponent } from './prime-ng/messages/messages.component';
 
 export function highchartsModules() {
   return [ exporting, exporting2, exporting3 ];
@@ -78,10 +88,16 @@ export function highchartsModules() {
     FormValidateComponent,
     EventEmittersComponent,
     EventEmittersChildComponent,
-    PassDataToChildComponent
+    PassDataToChildComponent,
+    AngularDataTableComponent,
+    PrimeNgComponent,
+    DatatableComponent,
+    PanelComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFontAwesomeModule,
@@ -101,11 +117,15 @@ export function highchartsModules() {
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyC8DiMc7fh5xLy68cI_RXag_zwjsqnJEo8',
       libraries: ['places']
-    })
+    }),
+    DataTableModule,
+    SharedModule, DropdownModule, AccordionModule, PanelModule, TabViewModule, FieldsetModule,
+    GrowlModule
   ],
   providers: [{ provide: HIGHCHARTS_MODULES, useFactory: highchartsModules },
     NewsApiService, NotesJsonService, GithubUsersService, GeofireGooglemapsService,
-    FirestoreItemService
+    FirestoreItemService,
+    CarsService
   ],
   bootstrap: [AppComponent]
 })

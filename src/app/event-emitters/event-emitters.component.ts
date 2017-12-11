@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-event-emitters',
@@ -7,8 +8,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class EventEmittersComponent implements OnInit {
+  employeeInfo: any;
   childDataa: any;
-
+  closeResult: string;
   valueToBePassed: string;
   childValue: string;
 
@@ -19,7 +21,7 @@ export class EventEmittersComponent implements OnInit {
     {eName: 'Donald Trump', eCity: 'France', eDept: 'PHP Developer'}
   ];
 
-  constructor() {}
+  constructor(private modalService: NgbModal) {}
 
   // onClicked(value) {
   //   this.childData = value;
@@ -29,8 +31,23 @@ export class EventEmittersComponent implements OnInit {
     this.childDataa = value;
   }
 
-  getRecord(emp) {
-    console.log('This is a ' + JSON.stringify(emp));
+  getRecord(emp, content) {
+    this.employeeInfo = emp;
+    this.modalService.open(content).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
   }
 
   ngOnInit() {

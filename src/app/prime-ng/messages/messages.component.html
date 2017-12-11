@@ -1,0 +1,13 @@
+<p-growl [(value)]="msgs"></p-growl>
+<br /><br /><br /><br /><br />
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+      <button type="button" pButton (click)="showSuccess()" label="Success" class="btn btn-success">Success</button>
+      <button type="button" pButton (click)="showInfo()" label="Info" class="btn btn-info">Info</button>
+      <button type="button" pButton (click)="showWarn()" label="Warn" class="btn btn-warning">Warn</button>
+      <button type="button" pButton (click)="showError()" label="Error" class="btn btn-danger">Error</button>
+      <button type="button" pButton (click)="showMultiple()" label="Multiple" class="btn btn-primary">Multiple</button>
+      <br/><br/><br/>
+      <button type="button" pButton (click)="clear()" icon="fa-close" class="btn btn-primary" label="Clear">Clear</button>
+  </div>
+</div>

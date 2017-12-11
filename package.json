@@ -38,6 +38,7 @@
     "ng2-ya-table": "^0.4.3",
     "ngx-advanced-table": "0.0.12",
     "ngx-bootstrap": "^2.0.0-beta.8",
+    "primeng": "^5.0.2",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },

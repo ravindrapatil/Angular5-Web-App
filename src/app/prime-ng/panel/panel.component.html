@@ -1,0 +1,60 @@
+<p>
+  <a [routerLink]="['/primeNG']">Back</a>
+</p>
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <h5 class="">Accordion</h5>
+    <br/>
+    <p-accordion>
+      <p-accordionTab header="Redux" [selected]="true">
+        Redux is an application state manager for JavaScript applications, and keeps with the core principles of the Flux-architecture
+        by having a unidirectional data flow in your application.
+      </p-accordionTab>
+      <p-accordionTab>
+        <p-header>
+          Ngrx
+        </p-header>
+        Redux state managers have been very well received and have inspired the creation of @ngrx, a set of modules that implement
+        the same way of managing state as well as some of the middleware and tools in the Redux ecosystem.
+      </p-accordionTab>
+    </p-accordion>
+    <br/>
+    <h5 class="">Panel</h5>
+    <br/>
+    <p-panel header="ViewEncapsulation">
+      This para is applied with class none the css is defined in app.component.css and due to viewEncapsulation set to none in
+      app.component the style can flow from one component to another view encapsulation works!
+    </p-panel>
+    <p-panel header="Event Emitters" [toggleable]="true">
+      You can think of Event Emitters as nothing but a means to bridge the gap or provide a means of communication between parent
+      and child components. This is one of the first things you learn in Angular as everything in Angular is components and
+      thats waht help modularize the code.
+    </p-panel>
+    <br/><br/>
+  </div>
+  <div class="col-md-6 col-sm-12">
+    <h5 class="">Tab View</h5>
+    <br/>
+    <p-tabView>
+      <p-tabPanel header="Template Driven" [closable]="true">
+          The instantaneous two-way data binding of ng-model in Angular 1 is really a life-saver as it allows to transparently keep in sync a form with a view model. 
+      </p-tabPanel>
+      <p-tabPanel header="Reactive Forms" [selected]="true">
+          Probably the most important building block of any we application is a form. With forms we register users validate user data store it on the server use.
+      </p-tabPanel>
+      <p-tabPanel header="Quick Shout" [closable]="true">
+          Form Controls represent a single input and is the smallest unit in a Angular Form. Where as a Forms Groups is a a way to manage these form groups.
+      </p-tabPanel>
+    </p-tabView>
+    <br/>
+    <h5 class="">Fieldset</h5>
+    <br/>
+    <p-fieldset legend="Angular Services">
+        The new Http Client is a upgraded version of the old Http Module. Here are some of the distinct advantages of using the new Http Client Module.
+    </p-fieldset>
+    <br/>
+    <p-fieldset legend="Http Request" [toggleable]="true">
+        Notice that we are building the HTTPParams object by chaining successive set() methods. This is because HTTPParams is immutable, and its API methods.
+    </p-fieldset>
+  </div>
+</div>
