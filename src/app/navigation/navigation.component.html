@@ -55,12 +55,12 @@
             <span class="nav-link-text">Prime NG</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Link">
+        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Link">
           <a class="nav-link" href="#">
             <i class="fa fa-fw fa-link"></i>
             <span class="nav-link-text">Link</span>
           </a>
-        </li>
+        </li> -->
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown" ngbDropdown>
@@ -173,6 +173,7 @@
         <p>Select "Logout" below if you are ready to end your current session.</p>
       </div>
       <div class="modal-footer">
+          <button type="button" class="btn" (click)="logout()">Logout</button>
         <button type="button" class="btn btn-outline-light" (click)="c('Close click')">Close</button>
       </div>
     </ng-template>

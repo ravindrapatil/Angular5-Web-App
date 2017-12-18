@@ -11,6 +11,7 @@ export class EventEmittersChildComponent implements OnInit {
   // @Output() clicked = new EventEmitter();
   @Input() valuepassed: any;
   @Output() toParent = new EventEmitter();
+  @Input() myString: any;
 
   @Output() toParent2 = new EventEmitter();
 
@@ -29,6 +30,7 @@ export class EventEmittersChildComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.myString);
   }
 
 }

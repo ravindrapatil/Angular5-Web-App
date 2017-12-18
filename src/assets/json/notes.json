@@ -59,6 +59,12 @@
         {
             "name": "http-server (on local)",
             "description": "npm install http-server -g => http-server ./[yourfolder] -p 1337 =>  http://localhost:1337/myfile.html"
+        },
+        {
+            "name": "Angular Builds",
+            "description": "Development: ng build, Production: ng build --prod, Uploading to subfolder in the server: ng build -prod --base-href /whatever/"
         }
+
+        
     ]
   }

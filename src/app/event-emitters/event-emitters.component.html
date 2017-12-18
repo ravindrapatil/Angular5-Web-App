@@ -6,23 +6,23 @@
     <p>Enter the Text to send to the Child Component :</p>
     <input type="text" placeholder="Enter" class="form-control" #parentInput (keyup)="0" />
     <br/>
-    <p>Value passed by Child component: <span class="text-danger"><strong>{{childValue}}</strong></span></p>
+    <p>Value passed by Child component:
+      <span class="text-danger">
+        <strong>{{childValue}}</strong>
+      </span>
+    </p>
   </div>
   <div class="col-sm-12 col-md-6">
-    <app-event-emitters-child 
-      [valuepassed]="{one: parentInput.value, two: 'Enter Value to be passed to Parent Component'}" 
-      (toParent)="childValue = $event">
+    <app-event-emitters-child [myString]="myPassedString" [valuepassed]="{one: parentInput.value, two: 'Enter Value to be passed to Parent Component'}" (toParent)="childValue = $event">
     </app-event-emitters-child>
   </div>
 </div>
 <br/>
 <hr/>
 <div class="row">
-    <div class="col-sm-12 col-md-12">
-      <app-pass-data-to-child 
-        [employeeInfo] = "employeeRecord"
-        (sendRecord)="getRecord($event, content)"></app-pass-data-to-child>
-    </div>
+  <div class="col-sm-12 col-md-12">
+    <app-pass-data-to-child [employeeInfo]="employeeRecord" (sendRecord)="getRecord($event, content)"></app-pass-data-to-child>
+  </div>
 </div>
 
 <ng-template #content let-c="close" let-d="dismiss">
@@ -33,11 +33,61 @@
     </button>
   </div>
   <div class="modal-body">
-    <p><strong>Name:</strong> {{employeeInfo.eName}}</p>
-    <p><strong>City:</strong> {{employeeInfo.eCity}}</p>
-    <p><strong>Department:</strong> {{employeeInfo.eDept}}</p>
+    <p>
+      <strong>Name:</strong> {{singleEmp.eName}}</p>
+    <p>
+      <strong>City:</strong> {{singleEmp.eCity}}</p>
+    <p>
+      <strong>Department:</strong> {{singleEmp.eDept}}</p>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
   </div>
 </ng-template>
+
+<br/>
+<br/>
+
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+    <div *ngIf="employeeRecord.length > 2; then showdata else nodata">
+      <!-- <ul>
+        <li *ngFor="let emp of employeeRecord">
+          {{emp.eName}}
+        </li>
+      </ul> -->
+    </div>
+
+    <ng-template #showdata>
+      <ul>
+        <li *ngFor="let emp of employeeRecord; let i = index">
+          {{i+1}} - {{emp.eName}}
+        </li>
+      </ul>
+    </ng-template>
+    <ng-template #nodata>
+      <p>No data</p>
+    </ng-template>
+
+  </div>
+</div>
+
+<br/>
+<br/>
+
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+    <div *ngFor="let emp of employeeRecord; let i = index">
+      <div [ngSwitch]="emp.eCity">
+        <ul class="group-list">
+          <li *ngSwitchCase="'Landon'" >
+            This is a Londan - {{emp.eName}}
+          </li>
+          <li *ngSwitchCase="'USA'" [ngClass]="{bordered: emp.eCity == 'USA'}">
+            This is a USA - {{emp.eName}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

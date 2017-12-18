@@ -59,6 +59,10 @@ import { DatatableComponent } from './prime-ng/datatable/datatable.component';
 import { CarsService } from './services/cars.service';
 import { PanelComponent } from './prime-ng/panel/panel.component';
 import { MessagesComponent } from './prime-ng/messages/messages.component';
+import { AuthGuardGuard } from './guard/auth-guard.guard';
+import { AuthService } from './services/auth.service';
+import { OnlyLoggedInUsersGuardGuard } from './guard/only-logged-in-users-guard.guard';
+import { LoginComponent } from './login/login.component';
 
 export function highchartsModules() {
   return [ exporting, exporting2, exporting3 ];
@@ -93,7 +97,8 @@ export function highchartsModules() {
     PrimeNgComponent,
     DatatableComponent,
     PanelComponent,
-    MessagesComponent
+    MessagesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -125,7 +130,10 @@ export function highchartsModules() {
   providers: [{ provide: HIGHCHARTS_MODULES, useFactory: highchartsModules },
     NewsApiService, NotesJsonService, GithubUsersService, GeofireGooglemapsService,
     FirestoreItemService,
-    CarsService
+    CarsService,
+    AuthGuardGuard,
+    AuthService,
+    OnlyLoggedInUsersGuardGuard
   ],
   bootstrap: [AppComponent]
 })

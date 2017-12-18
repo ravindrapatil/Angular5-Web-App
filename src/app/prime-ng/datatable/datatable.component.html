@@ -1,28 +1,31 @@
-<p><a [routerLink]="['/primeNG']">Back</a></p>
+<p>
+    <a [routerLink]="['/primeNG']">Back</a>
+</p>
 <h4 class="text-primary">PrimeNG Datatable</h4>
 <p>Using PrimeNG we can integrate: Pagination, Cell sorting, Global sorting, Drag drop Columns, Responsive </p>
 <br/>
-<div class="ui-widget-header" style="padding:10px; border-bottom: 0 none">
-    <!-- <i class="fa fa-search" style="margin:4px 4px 0 0"></i> -->
-    <input class="form-control" #gb type="text" pInputText size="50" placeholder="Global Filter" />
-</div>
-<p-dataTable [value]="cars" [rows]="10" [paginator]="true" [globalFilter]="gb"
-  [pageLinks]="3" [rowsPerPageOptions]="[5, 10, 20]" sortMode="multiple" [stacked]="stacked"
-  reorderableColumns="true">
-  <!-- <p-header>
+<div class="primeng-datatable">
+    <div class="ui-widget-header" style="padding:10px; border-bottom: 0 none">
+        <!-- <i class="fa fa-search" style="margin:4px 4px 0 0"></i> -->
+        <input class="form-control" #gb type="text" pInputText size="50" placeholder="Global Filter" />
+    </div>
+    <p-dataTable [value]="cars" [rows]="10" [paginator]="true" [globalFilter]="gb" [pageLinks]="3" [rowsPerPageOptions]="[5, 10, 20]"
+        sortMode="multiple" [stacked]="stacked" reorderableColumns="true">
+        <!-- <p-header>
       <div style="text-align:left">
           <p-multiSelect [options]="columnOptions" [(ngModel)]="cols" name="cols"></p-multiSelect>
       </div>
   </p-header> -->
-  <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" [sortable]="true" 
-    [filter]="true" filterPlaceholder="Search">
-  </p-column>
-  <ng-template pTemplate="paginatorLeft">
-      &nbsp;
-  </ng-template>
-  <ng-template pTemplate="paginatorRight">
-      &nbsp;
-  </ng-template>
-</p-dataTable>
+        <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" [sortable]="true" [filter]="true" filterPlaceholder="Search">
+        </p-column>
+        <ng-template pTemplate="paginatorLeft">
+            &nbsp;
+        </ng-template>
+        <ng-template pTemplate="paginatorRight">
+            &nbsp;
+        </ng-template>
+    </p-dataTable>
+</div>
 
-<br/><br/>
+<br/>
+<br/>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -13,13 +14,19 @@ export class NavigationComponent implements OnInit {
   public isNavbarCollapsed = true;
   public closeResult: string;
 
-  constructor(private modelService: NgbModal) { }
+  constructor(private modelService: NgbModal, private route: Router) {}
 
   open(content) {
     this.modelService.open(content, {windowClass: 'dark-modal'});
   }
 
   ngOnInit() {
+  }
+
+  logout() {
+    sessionStorage.clear();
+    this.route.navigateByUrl('/login');
+    // this.modelService.close('Close click');
   }
 
 }

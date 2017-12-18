@@ -16,24 +16,28 @@ import { PrimeNgComponent } from './prime-ng/prime-ng.component';
 import { DatatableComponent } from './prime-ng/datatable/datatable.component';
 import { PanelComponent } from './prime-ng/panel/panel.component';
 import { MessagesComponent } from './prime-ng/messages/messages.component';
+import { AuthGuardGuard } from './guard/auth-guard.guard';
+import { OnlyLoggedInUsersGuardGuard } from './guard/only-logged-in-users-guard.guard';
+import { LoginComponent } from './login/login.component';
 
-const routes: Routes = [
+const routes: any = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'charts', component: ChartsComponent },
-  { path: 'news', component: NewsComponent },
-  { path: 'notes', component: NotesComponent },
-  { path: 'tables', component: BasicTableComponent },
-  { path: 'ngxdatatable', component: NgxDatatableComponent },
-  { path: 'googlemaps', component: GooglemapContainerComponent },
-  { path: 'angularfire', component: AfContainerComponent },
-  { path: 'ngForm', component: FormsComponent },
-  { path: 'eventemitters', component: EventEmittersComponent },
-  { path: 'angularDT', component: AngularDataTableComponent },
-  { path: 'primeNG', component: PrimeNgComponent },
-  { path: 'primeNGDataTable', component: DatatableComponent },
-  { path: 'primeNGpanel', component: PanelComponent },
-  { path: 'primeNGmsg', component: MessagesComponent }
+  { path: 'charts', component: ChartsComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'news', component: NewsComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'notes', component: NotesComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'tables', component: BasicTableComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'ngxdatatable', component: NgxDatatableComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'googlemaps', component: GooglemapContainerComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'angularfire', component: AfContainerComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'ngForm', component: FormsComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'eventemitters', component: EventEmittersComponent, canActivate: [AuthGuardGuard, OnlyLoggedInUsersGuardGuard] },
+  { path: 'angularDT', component: AngularDataTableComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'primeNG', component: PrimeNgComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'primeNGDataTable', component: DatatableComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'primeNGpanel', component: PanelComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'primeNGmsg', component: MessagesComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

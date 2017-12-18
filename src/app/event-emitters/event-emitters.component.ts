@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-event-emitters',
@@ -8,20 +9,23 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   encapsulation: ViewEncapsulation.None
 })
 export class EventEmittersComponent implements OnInit {
-  employeeInfo: any;
+  singleEmp: any;
   childDataa: any;
   closeResult: string;
   valueToBePassed: string;
   childValue: string;
+  isBordered: boolean;
+  myPassedString = 'This is my String';
 
   public employeeRecord = [
     {eName: 'John Wright', eCity: 'Landon', eDept: 'Web Developer'},
     {eName: 'Steve Wagh', eCity: 'India', eDept: 'Java Developer'},
     {eName: 'George Bush', eCity: 'USA', eDept: '.Net Developer'},
-    {eName: 'Donald Trump', eCity: 'France', eDept: 'PHP Developer'}
+    {eName: 'Donald Trump', eCity: 'France', eDept: 'PHP Developer'},
+    {eName: 'Obama', eCity: 'USA', eDept: 'Android Developer'},
   ];
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, public routername: Router) {}
 
   // onClicked(value) {
   //   this.childData = value;
@@ -32,7 +36,7 @@ export class EventEmittersComponent implements OnInit {
   }
 
   getRecord(emp, content) {
-    this.employeeInfo = emp;
+    this.singleEmp = emp;
     this.modalService.open(content).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -51,6 +55,7 @@ export class EventEmittersComponent implements OnInit {
   }
 
   ngOnInit() {
+    const data = this.routername.routerState;
   }
 
 }
