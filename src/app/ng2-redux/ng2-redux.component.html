@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-sm-3 col-md-3">
+    <button class="btn btn-primary" (click)="clearTodos()">Delete All</button>
+  </div>
+  <div class="col-sm-9 col-md-9">
+    Last Update: {{ (lastUpdate | async) | date:'mediumTime' }} | Total items: {{ (todos | async).length }}
+  </div>
+</div>
+
+<br/><br/>
+
+<app-todo-list></app-todo-list>

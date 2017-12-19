@@ -38,12 +38,6 @@
           </a>
         </li>
         <li class="nav-item" data-placement="right" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-          <a class="nav-link" [routerLink]="['/ngForm']">
-            <i class="fa fa-fw fa-file-text"></i>
-            <span class="nav-link-text">Forms</span>
-          </a>
-        </li>
-        <li class="nav-item" data-placement="right" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
           <a class="nav-link" [routerLink]="['/eventemitters']">
             <i class="fa fa-fw fa-file"></i>
             <span class="nav-link-text">Comp't Communication</span>
@@ -55,14 +49,21 @@
             <span class="nav-link-text">Prime NG</span>
           </a>
         </li>
-        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Link">
-          <a class="nav-link" href="#">
+        <li class="nav-item" data-placement="right" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" [routerLink]="['/ng2redux']">
             <i class="fa fa-fw fa-link"></i>
-            <span class="nav-link-text">Link</span>
+            <span class="nav-link-text">Angular with Redux</span>
           </a>
-        </li> -->
+        </li>
+        <li class="nav-item" data-placement="right" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link" [routerLink]="['/ngForm']">
+              <i class="fa fa-fw fa-file-text"></i>
+              <span class="nav-link-text">Forms</span>
+            </a>
+          </li>
       </ul>
       <ul class="navbar-nav ml-auto">
+        <li style="color:#fff; line-height: 40px; padding-right: 10px;">{{ (lastUpdate | async) | date: 'medium'}}</li>
         <li class="nav-item dropdown" ngbDropdown>
           <a class="nav-link dropdown-toggle mr-lg-2" id="dropdownBasic1" ngbDropdownToggle>
             <i class="fa fa-fw fa-envelope"></i>

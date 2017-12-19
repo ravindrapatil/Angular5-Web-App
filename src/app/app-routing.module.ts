@@ -19,6 +19,7 @@ import { MessagesComponent } from './prime-ng/messages/messages.component';
 import { AuthGuardGuard } from './guard/auth-guard.guard';
 import { OnlyLoggedInUsersGuardGuard } from './guard/only-logged-in-users-guard.guard';
 import { LoginComponent } from './login/login.component';
+import { Ng2ReduxComponent } from './ng2-redux/ng2-redux.component';
 
 const routes: any = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -37,7 +38,8 @@ const routes: any = [
   { path: 'primeNGDataTable', component: DatatableComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
   { path: 'primeNGpanel', component: PanelComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
   { path: 'primeNGmsg', component: MessagesComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'ng2redux', component: Ng2ReduxComponent}
 ];
 
 @NgModule({

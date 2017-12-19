@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { NgRedux, select } from '@angular-redux/store';
 
 @Component({
   selector: 'app-navigation',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class NavigationComponent implements OnInit {
-
+  @select() lastUpdate;
   public isNavbarCollapsed = true;
   public closeResult: string;
 

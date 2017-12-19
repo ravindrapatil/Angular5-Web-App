@@ -20,6 +20,7 @@ import { AgmCoreModule } from '@agm/core';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { NgRedux, NgReduxModule } from '@angular-redux/store';
 // PrimeNG
 import { DataTableModule, SharedModule, DropdownModule, AccordionModule,
   PanelModule, TabViewModule, FieldsetModule, GrowlModule } from 'primeng/primeng';
@@ -63,6 +64,10 @@ import { AuthGuardGuard } from './guard/auth-guard.guard';
 import { AuthService } from './services/auth.service';
 import { OnlyLoggedInUsersGuardGuard } from './guard/only-logged-in-users-guard.guard';
 import { LoginComponent } from './login/login.component';
+import { Ng2ReduxComponent } from './ng2-redux/ng2-redux.component';
+import { IAppState, rootReducer, INITIAL_STATE } from './store';
+import { TodoListComponent } from './ng2-redux/todo-list/todo-list.component';
+// import { INCREMENT } from './actions';
 
 export function highchartsModules() {
   return [ exporting, exporting2, exporting3 ];
@@ -98,7 +103,9 @@ export function highchartsModules() {
     DatatableComponent,
     PanelComponent,
     MessagesComponent,
-    LoginComponent
+    LoginComponent,
+    Ng2ReduxComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
@@ -125,7 +132,8 @@ export function highchartsModules() {
     }),
     DataTableModule,
     SharedModule, DropdownModule, AccordionModule, PanelModule, TabViewModule, FieldsetModule,
-    GrowlModule
+    GrowlModule,
+    NgReduxModule
   ],
   providers: [{ provide: HIGHCHARTS_MODULES, useFactory: highchartsModules },
     NewsApiService, NotesJsonService, GithubUsersService, GeofireGooglemapsService,
@@ -137,4 +145,8 @@ export function highchartsModules() {
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(ngRedux: NgRedux<IAppState>) {
+    ngRedux.configureStore(rootReducer, INITIAL_STATE);
+  }
+}
