@@ -1,4 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { HttpModule, Http } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-forms',
@@ -6,7 +9,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./forms.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class FormsComponent implements OnInit {
+export class FormsComponent implements OnInit, AfterViewInit {
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
   firstname: string;
   lastname: string;
@@ -15,7 +18,10 @@ export class FormsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
+
+  ngAfterViewInit() {}
 
   onSubmit() {
     this.dataObj = {

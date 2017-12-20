@@ -1,0 +1,61 @@
+<h2 class="text-primary">RxJs</h2>
+<p><strong>Simple RxJs Subscribe</strong></p>
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <p>Name: {{resp?.name}}</p>
+    <p>Height: {{resp?.height}}</p>
+    <p>Hair Color: {{resp?.hair_color}}</p>
+    <p>Gender: {{resp?.gender}}</p>
+  </div>
+  <div class="col-md-6 col-sm-12">
+    <p>Name: {{loadedCharacter?.name}}</p>
+    <p>Population: {{loadedCharacter?.population}}</p>
+    <p>Created: {{loadedCharacter?.created | date: 'dd/MM/yyyy'}}</p>
+    <p style="text-transform: capitalize;">Climate: {{loadedCharacter?.climate}}</p>
+  </div>
+</div>
+
+<hr/>
+
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <p><strong class="text-primary">Concat</strong> - Concat will combine two observables into a combined sequence, but the second observable will not start emitting until the first one has completed.</p>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let data of concatStream">
+          Source: {{data.source}} - Value: {{data.value}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6 col-sm-12">
+    <p><strong class="text-primary">Merge</strong> - Merge is similar to concat, but it will interleave the emitted values instead of completing the first observable before starting the second one.</p>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let data of mergeStream">
+          Source: {{data.source}} - Value: {{data.value}}
+      </li>
+    </ul>
+  </div>  
+</div>
+
+<br/><br/>
+
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <p><strong class="text-primary">forkJoin</strong> - We use forkJoin to execute observables in parallel. One common use case of this is making multiple http requests in parallel. But the key point is that the subscriber won't receive any values until all observables have completed.</p>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let data of forkJoinStream">
+          Source: {{data.source}} - Value: {{data.value}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6 col-sm-12">
+    <p><strong class="text-primary">flatMap</strong> - flatMap is how we handle dependencies between 
+      observables. Here, returning a value from the first observable that is needed by the second observable to calculate a sum</p>
+    <ul class="list-group">
+      <li class="list-group-item">
+          {{flatMappedStream}}
+      </li>
+    </ul>
+  </div>  
+</div>
+
+<br /><br />

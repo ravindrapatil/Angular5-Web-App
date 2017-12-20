@@ -67,6 +67,8 @@ import { LoginComponent } from './login/login.component';
 import { Ng2ReduxComponent } from './ng2-redux/ng2-redux.component';
 import { IAppState, rootReducer, INITIAL_STATE } from './store';
 import { TodoListComponent } from './ng2-redux/todo-list/todo-list.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
+import { SubscribeComponent } from './rxjs/subscribe/subscribe.component';
 // import { INCREMENT } from './actions';
 
 export function highchartsModules() {
@@ -105,7 +107,9 @@ export function highchartsModules() {
     MessagesComponent,
     LoginComponent,
     Ng2ReduxComponent,
-    TodoListComponent
+    TodoListComponent,
+    RxjsComponent,
+    SubscribeComponent
   ],
   imports: [
     BrowserModule,

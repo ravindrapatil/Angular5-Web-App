@@ -56,11 +56,17 @@
           </a>
         </li>
         <li class="nav-item" data-placement="right" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-            <a class="nav-link" [routerLink]="['/ngForm']">
+            <a class="nav-link" [routerLink]="['/rxjs']">
               <i class="fa fa-fw fa-file-text"></i>
-              <span class="nav-link-text">Forms</span>
+              <span class="nav-link-text">RXJS</span>
             </a>
           </li>
+        <li class="nav-item" data-placement="right" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" [routerLink]="['/ngForm']">
+            <i class="fa fa-fw fa-file-text"></i>
+            <span class="nav-link-text">Forms</span>
+          </a>
+        </li>
       </ul>
       <ul class="navbar-nav ml-auto">
         <li style="color:#fff; line-height: 40px; padding-right: 10px;">{{ (lastUpdate | async) | date: 'medium'}}</li>
