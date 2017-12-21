@@ -11,6 +11,9 @@ import { forkJoin } from 'rxjs/observable/forkJoin';
   encapsulation: ViewEncapsulation.None
 })
 export class SubscribeComponent implements OnInit {
+  scanValue: any;
+  sum: number;
+  rangeArray: any[] = [];
   mainData: any;
   flatMappedStream: number;
   forkJoinStream: [{ source: number; value: number; }, { source: number; value: number; }];
@@ -25,7 +28,7 @@ export class SubscribeComponent implements OnInit {
   forkLoadedCharacter: any;
   resp: any;
   homeworld2: Observable<{}>;
-  doctors: any[] = [];
+  doctors: any;
 
   constructor(private http: HttpClient) { }
 
@@ -75,25 +78,58 @@ export class SubscribeComponent implements OnInit {
     });
 
 
-    Observable.of([1, 4, 6, 7, 9]).map(x => {
-      console.log('XXXX ' + x);
-    }).subscribe(res => {
-      console.log('res ' + res);
+    Observable.of([1, 4, 6, 7, 9])
+    .subscribe(res => {
+      console.log('Response ' + res);
     });
 
     this.http.get('http://jsonplaceholder.typicode.com/users/')
-      // tslint:disable-next-line:radix
-      // tslint:disable-next-line:semicolon
-      // .filter(function(x, i) {
-      //   return x[i].id > 5;
-      // })
-      // .filter((person, i) => person[i] > 5 )
+      .map((items: any) => items)
+      .map(x => {
+        return x.filter((y, i) => y.id > 5);
+      })
       .subscribe(data => {
-        // tslint:disable-next-line:no-debugger
-        debugger;
-        this.doctors.push(data);
-        console.log(this.doctors);
+        this.doctors = data;
       });
+
+      Observable.of([1, 2, 3, 4, 5, 6, 7, 8, 9])
+        .map(x => {
+          return x.filter(y => y % 2 === 0);
+        })
+        .subscribe(res => console.log(res));
+
+      Observable.range(2, 5)
+        .subscribe(x => {
+          this.rangeArray.push(x);
+          console.log(x);
+          }, (err) => {
+            console.log('Error ' + err);
+          }, () => {
+            console.log('Completed');
+          }
+        );
+
+      // reduce
+      Observable.of(1, 2, 3, 4, 5)
+        .reduce((total, currentVal) => {
+          return total + currentVal;
+        }, 0)
+        .subscribe(result => {
+          this.sum = result;
+        });
+
+      // Scan
+      Observable.of(1, 2, 3, 4, 5)
+      .scan((total, currentVal) => {
+        return total + currentVal;
+      }, 0)
+      .subscribe({
+        next: (value) => {
+          console.log(value);
+          this.scanValue = value;
+        }
+      });
+
   }
 
 }
