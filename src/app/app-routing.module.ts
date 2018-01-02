@@ -39,9 +39,9 @@ const routes: any = [
   { path: 'primeNGDataTable', component: DatatableComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
   { path: 'primeNGpanel', component: PanelComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
   { path: 'primeNGmsg', component: MessagesComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
-  { path: 'login', component: LoginComponent},
-  { path: 'ng2redux', component: Ng2ReduxComponent},
-  { path: 'rxjs', component: RxjsComponent}
+  { path: 'login', component: LoginComponent },
+  { path: 'ng2redux', component: Ng2ReduxComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'rxjs', component: RxjsComponent, canActivate: [OnlyLoggedInUsersGuardGuard] }
 ];
 
 @NgModule({

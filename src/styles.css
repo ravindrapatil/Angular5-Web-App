@@ -311,4 +311,8 @@ agm-map {
         display: none;
     }
 
+    #mainNav.fixed-top .navbar-sidenav {
+        height: auto;
+    }
+
 }
