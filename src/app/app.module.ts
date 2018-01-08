@@ -69,6 +69,9 @@ import { IAppState, rootReducer, INITIAL_STATE } from './store';
 import { TodoListComponent } from './ng2-redux/todo-list/todo-list.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { SubscribeComponent } from './rxjs/subscribe/subscribe.component';
+import { SimplePilePipe } from './filter/simple-pile.pipe';
+import { ChangeDetectionComponent } from './change-detection/change-detection.component';
+import { ChngDetChildComponent } from './change-detection/chng-det-child/chng-det-child.component';
 // import { INCREMENT } from './actions';
 
 export function highchartsModules() {
@@ -109,7 +112,10 @@ export function highchartsModules() {
     Ng2ReduxComponent,
     TodoListComponent,
     RxjsComponent,
-    SubscribeComponent
+    SubscribeComponent,
+    SimplePilePipe,
+    ChangeDetectionComponent,
+    ChngDetChildComponent
   ],
   imports: [
     BrowserModule,

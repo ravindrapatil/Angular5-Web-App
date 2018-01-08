@@ -6,6 +6,7 @@
           <div class="float-left">Top headlines</div>
           <div class="float-right">
             <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search by title" />
+            <!-- <p>Test out Custom pipe: {{ 3 | simplePile:40:20:'Hello there'}}</p> -->
           </div>
         </div>
         <div *ngIf="loading" style="margin:0 auto; text-align:center;">

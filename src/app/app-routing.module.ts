@@ -21,6 +21,7 @@ import { OnlyLoggedInUsersGuardGuard } from './guard/only-logged-in-users-guard.
 import { LoginComponent } from './login/login.component';
 import { Ng2ReduxComponent } from './ng2-redux/ng2-redux.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { ChangeDetectionComponent } from './change-detection/change-detection.component';
 
 const routes: any = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -41,7 +42,8 @@ const routes: any = [
   { path: 'primeNGmsg', component: MessagesComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'ng2redux', component: Ng2ReduxComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
-  { path: 'rxjs', component: RxjsComponent, canActivate: [OnlyLoggedInUsersGuardGuard] }
+  { path: 'rxjs', component: RxjsComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'changeDetect', component: ChangeDetectionComponent, canActivate: [OnlyLoggedInUsersGuardGuard] }
 ];
 
 @NgModule({

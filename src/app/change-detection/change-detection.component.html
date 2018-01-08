@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+            <input type="text" [(ngModel)]="foodValue" class="form-control" placeholder="Enter a new food">
+        </div>
+        <div class="col-7">
+            <button (click)="addFood(foodValue)" class="btn btn-primary">Add food</button>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-5">
+            <input type="text" [(ngModel)]="foodValue2" class="form-control" placeholder="Enter a new food">
+        </div>
+        <div class="col-7">
+            <button (click)="behaviorSubject(foodValue2)" class="btn btn-primary">Add food (BehaviorSubject)</button>
+        </div>
+    </div>
+
+    <br/><br/>
+    <app-chng-det-child [data]="foods" [dataBS]="foodsBS"></app-chng-det-child>
+</div>
