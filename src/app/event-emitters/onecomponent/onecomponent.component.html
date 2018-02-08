@@ -1,0 +1,23 @@
+<p>
+  Component One: <span class="text-primary">{{subjects}}</span>
+</p>
+<div class="row">
+  <div class="col-6">
+    <input type="text" class="form-control" [(ngModel)]="subjName" />
+  </div>
+  <div class="col-6">
+    <button (click)="editSubject()" class="btn btn-primary">Change</button>
+  </div>
+</div>
+
+
+<!-- <form>
+  <div class="row">
+    <div class="col-6">
+      <input type="text" class="form-control" name="query" placeholder="Search" [(ngModel)]="query" />
+    </div>
+    <div class="col-6">
+      <button type="submit" class="btn btn-primary" (click)="searchResult(query)">Search</button>
+    </div>
+  </div>
+</form> -->

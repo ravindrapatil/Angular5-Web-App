@@ -22,6 +22,8 @@ import { LoginComponent } from './login/login.component';
 import { Ng2ReduxComponent } from './ng2-redux/ng2-redux.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ChangeDetectionComponent } from './change-detection/change-detection.component';
+import { Nvd3Component } from './nvd3/nvd3.component';
+import { DynamicCompComponent } from './dynamic-comp/dynamic-comp.component';
 
 const routes: any = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -43,7 +45,9 @@ const routes: any = [
   { path: 'login', component: LoginComponent },
   { path: 'ng2redux', component: Ng2ReduxComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
   { path: 'rxjs', component: RxjsComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
-  { path: 'changeDetect', component: ChangeDetectionComponent, canActivate: [OnlyLoggedInUsersGuardGuard] }
+  { path: 'changeDetect', component: ChangeDetectionComponent, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'nvd3', component: Nvd3Component, canActivate: [OnlyLoggedInUsersGuardGuard] },
+  { path: 'dynamicComp', component: DynamicCompComponent, canActivate: [OnlyLoggedInUsersGuardGuard] }
 ];
 
 @NgModule({

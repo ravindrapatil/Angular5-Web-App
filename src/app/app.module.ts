@@ -21,6 +21,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { NgRedux, NgReduxModule } from '@angular-redux/store';
+import { NvD3Module } from 'ngx-nvd3';
 // PrimeNG
 import { DataTableModule, SharedModule, DropdownModule, AccordionModule,
   PanelModule, TabViewModule, FieldsetModule, GrowlModule } from 'primeng/primeng';
@@ -72,6 +73,15 @@ import { SubscribeComponent } from './rxjs/subscribe/subscribe.component';
 import { SimplePilePipe } from './filter/simple-pile.pipe';
 import { ChangeDetectionComponent } from './change-detection/change-detection.component';
 import { ChngDetChildComponent } from './change-detection/chng-det-child/chng-det-child.component';
+import { OnecomponentComponent } from './event-emitters/onecomponent/onecomponent.component';
+import { TwocomponentComponent } from './event-emitters/twocomponent/twocomponent.component';
+import { SubjectService } from './services/subject.service';
+import { TvmazeService } from './services/tvmaze.service';
+import { Nvd3Component } from './nvd3/nvd3.component';
+import { DynamicCompComponent } from './dynamic-comp/dynamic-comp.component';
+import { InjectedCompComponent } from './dynamic-comp/injected-comp/injected-comp.component';
+import { InjectdirectiveDirective } from './directive/injectdirective.directive';
+
 // import { INCREMENT } from './actions';
 
 export function highchartsModules() {
@@ -115,7 +125,13 @@ export function highchartsModules() {
     SubscribeComponent,
     SimplePilePipe,
     ChangeDetectionComponent,
-    ChngDetChildComponent
+    ChngDetChildComponent,
+    OnecomponentComponent,
+    TwocomponentComponent,
+    Nvd3Component,
+    DynamicCompComponent,
+    InjectedCompComponent,
+    InjectdirectiveDirective
   ],
   imports: [
     BrowserModule,
@@ -143,7 +159,8 @@ export function highchartsModules() {
     DataTableModule,
     SharedModule, DropdownModule, AccordionModule, PanelModule, TabViewModule, FieldsetModule,
     GrowlModule,
-    NgReduxModule
+    NgReduxModule,
+    NvD3Module
   ],
   providers: [{ provide: HIGHCHARTS_MODULES, useFactory: highchartsModules },
     NewsApiService, NotesJsonService, GithubUsersService, GeofireGooglemapsService,
@@ -151,7 +168,12 @@ export function highchartsModules() {
     CarsService,
     AuthGuardGuard,
     AuthService,
-    OnlyLoggedInUsersGuardGuard
+    OnlyLoggedInUsersGuardGuard,
+    SubjectService,
+    TvmazeService
+  ],
+  entryComponents: [
+    InjectedCompComponent
   ],
   bootstrap: [AppComponent]
 })
